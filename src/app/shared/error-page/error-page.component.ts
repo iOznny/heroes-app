@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
+  selector: 'app-error-page',
+  templateUrl: './error-page.component.html',
   styles: [
   ]
 })
-
-export class HeroeComponent implements OnInit {
+export class ErrorPageComponent implements OnInit {
 
   constructor() { }
 
