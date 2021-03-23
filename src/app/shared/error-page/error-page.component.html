@@ -1,1 +1,25 @@
 <p>error-page works!</p>
+
+<ul>
+    <li>
+        <a [routerLink]="['/auth/login']" routerLinkActive="active" >Ir a login</a>
+    </li>
+    <li>
+        <a [routerLink]="['/auth/register']" routerLinkActive="active" >Ir a registro</a>
+    </li>
+    <li>
+        <a [routerLink]="['/heroes/list']" routerLinkActive="active" >Ir a list</a>
+    </li>
+    <li>
+        <a [routerLink]="['/heroes/add']" routerLinkActive="active" >Ir a add</a>
+    </li>
+    <li>
+        <a [routerLink]="['/heroes/edit/1']" routerLinkActive="active" >Ir a edit/:id</a>
+    </li>
+    <li>
+        <a [routerLink]="['/heroes/search']" routerLinkActive="active" >Ir a search</a>
+    </li>
+    <li>
+        <a [routerLink]="['/heroes/1']" routerLinkActive="active" >Ir a :id</a>
+    </li>
+</ul>
