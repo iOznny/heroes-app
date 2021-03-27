@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 // Modules
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Components
 import { AddComponent } from './pages/add/add.component';
@@ -21,6 +24,8 @@ import { ListComponent } from './pages/list/list.component';
   ],
   imports: [
     CommonModule,
+    FlexLayoutModule,
+    MaterialModule,
     HeroesRoutingModule
   ]
 })
