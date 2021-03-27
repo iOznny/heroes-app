@@ -1,9 +1,7 @@
 <h1>Nuevo Héroe</h1>
 
 <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
-
     <div fxFlex="50" fxLayout="column">
-
         <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
             <mat-form-field fxFlex="100">
                 <mat-label>Super Héroe</mat-label>
@@ -45,9 +43,7 @@
         <button mat-raised-button color="primary" (click)="save()">Guardar</button>
     </div>
 
-
     <div fxFlex="50">
         <img [src]="heroe | imageHeroe">
     </div>
-
 </div>

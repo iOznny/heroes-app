@@ -31,7 +31,6 @@ export class SearchComponent implements OnInit {
 
   // Option seleciconada de héroe.
   optionSelected(e: MatAutocompleteSelectedEvent) {
-
     if(!e.option.value) {
       this.heroeSelect = undefined;
       return;
@@ -40,8 +39,7 @@ export class SearchComponent implements OnInit {
     const heroe: Heroe = e.option.value;
     this.term = heroe.superhero;
 
-    this.heroesService.getHeroesById(heroe.id)
-      .subscribe( heroe => this.heroeSelect = heroe);
+    this.heroesService.getHeroesById(heroe.id).subscribe( heroe => this.heroeSelect = heroe);
   }
 
 }
