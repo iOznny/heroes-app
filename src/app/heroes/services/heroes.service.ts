@@ -35,4 +35,9 @@ export class HeroesService {
     return this._http.get<Heroe[]>(`${ this.url }/heroes?q=${ term }&_limit=5`);
   }
 
+  // Insertar
+  postHeroe(heroe: Heroe): Observable<Heroe> {
+    return this._http.post<Heroe>(`${ this.url }/heroes`, heroe);
+  }
+
 }
