@@ -8,12 +8,7 @@ import { Heroe } from '../../interfaces/heroes.interface';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styles: [`
-    mat-card {
-      margin-top: 5px
-    }
-  `]
+  templateUrl: './list.component.html'
 })
 
 export class ListComponent implements OnInit {

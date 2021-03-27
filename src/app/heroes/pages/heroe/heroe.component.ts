@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Route
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
@@ -9,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeroeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _routerActive: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this._routerActive.params.subscribe( ({ id }) => console.log(id));
   }
 
 }
