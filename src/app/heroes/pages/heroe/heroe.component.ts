@@ -3,19 +3,37 @@ import { Component, OnInit } from '@angular/core';
 // Route
 import { ActivatedRoute } from '@angular/router';
 
+// Interface
+import { Heroe } from '../../interfaces/heroes.interface';
+
+// Service
+import { HeroesService } from '../../services/heroes.service';
+
+// Rxjs
+import { switchMap } from 'rxjs/operators';
+
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
-  styles: [
-  ]
+  styles: [`
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  `]
 })
 
 export class HeroeComponent implements OnInit {
 
-  constructor(private _routerActive: ActivatedRoute) { }
+  public heroe!: Heroe;
+
+  constructor(private heroesService: HeroesService , private routerActive: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this._routerActive.params.subscribe( ({ id }) => console.log(id));
+    this.routerActive.params.pipe(
+      switchMap( ({ id }) => this.heroesService.getHeroesById(id)) 
+    )
+    .subscribe( heroe => this.heroe = heroe );
   }
 
 }
