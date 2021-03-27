@@ -1,7 +1,9 @@
 <mat-sidenav-container fullscreen>
     <mat-sidenav #sidenav mode="push"> 
-        <mat-toolbar>
-            <span>Menu</span>
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+
+            <span class="spacer"></span>
             <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
               <mat-icon>menu</mat-icon>
             </button>            
@@ -18,9 +20,17 @@
         <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
+
         <span>Heroes App</span>
+
+        <span class="spacer"></span>
+        <button mat-button>
+            Logout
+          </button>
     </mat-toolbar>
 
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 
-    <router-outlet></router-outlet>
 </mat-sidenav-container>
