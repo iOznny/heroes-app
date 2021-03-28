@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Modules
-
 // Componentes
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
