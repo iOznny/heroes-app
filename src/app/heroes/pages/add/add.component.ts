@@ -54,7 +54,6 @@ export class AddComponent implements OnInit {
     private router: Router,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog) { 
-
   }
 
   ngOnInit(): void {
