@@ -35,17 +35,17 @@ export class HeroesService {
     return this._http.get<Heroe[]>(`${ this.url }/heroes?q=${ term }&_limit=5`);
   }
 
-  // Crear
+  // Crear.
   postHeroe(heroe: Heroe): Observable<Heroe> {
     return this._http.post<Heroe>(`${ this.url }/heroes`, heroe);
   }
 
-  // Actualizar
+  // Actualizar.
   putHeroe(heroe: Heroe): Observable<Heroe> {
     return this._http.put<Heroe>(`${ this.url }/heroes/${ heroe.id }`, heroe);
   }
 
-  // Eliminar
+  // Eliminar.
   deleteHeroe(id: string): Observable<any> {
     return this._http.delete<any>(`${ this.url }/heroes/${ id }`);
   }

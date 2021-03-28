@@ -46,9 +46,7 @@
             <button mat-raised-button color="primary" (click)="save()">
                 {{ (heroe.id) ? 'Actualizar' : 'Crear' }}
             </button>
-
             <span class="spacer"></span>
-
             <button mat-raised-button color="warn" *ngIf="heroe.id" (click)="delete()">Borrar</button>
         </div>
     
