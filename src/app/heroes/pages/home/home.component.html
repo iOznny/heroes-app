@@ -1,36 +1,35 @@
 <mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="push"> 
-        <mat-toolbar color="primary">
-            <span>Menú</span>
+  <mat-sidenav #sidenav mode="push"> 
+    <mat-toolbar color="primary">
+      <span>Menú</span>
 
-            <span class="spacer"></span>
-            <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
-              <mat-icon>menu</mat-icon>
-            </button>            
-        </mat-toolbar>
-
-        <mat-list role="list">
-            <mat-list-item role="listitem" [routerLink]="['/heroes/list']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">List Heroes</mat-list-item>
-            <mat-list-item role="listitem" [routerLink]="['/heroes/add']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">Añadir Heroe</mat-list-item>
-            <mat-list-item role="listitem" [routerLink]="['/heroes/search']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">Buscar Heroe</mat-list-item>            
-          </mat-list>
-    </mat-sidenav>
-
-    <mat-toolbar>
-        <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-
-        <span>Heroes App</span>
-
-        <span class="spacer"></span>
-        <button mat-button>
-            Logout
-          </button>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>            
     </mat-toolbar>
 
-    <div class="container">
-        <router-outlet></router-outlet>
-    </div>
+    <mat-list role="list">
+      <mat-list-item role="listitem" [routerLink]="['/heroes/list']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">List Heroes</mat-list-item>
+      <mat-list-item role="listitem" [routerLink]="['/heroes/add']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">Añadir Heroe</mat-list-item>
+      <mat-list-item role="listitem" [routerLink]="['/heroes/search']" routerLinkActive="router-link-active" (click)="sidenav.toggle()">Buscar Heroe</mat-list-item>            
+    </mat-list>
+  </mat-sidenav>
 
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>Heroes App</span>
+
+    <span class="spacer"></span>
+    <button mat-button>
+      Logout
+    </button>
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>
