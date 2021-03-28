@@ -8,8 +8,12 @@ import { Heroe, Publisher } from '../../interfaces/heroes.interface';
 // Services
 import { HeroesService } from '../../services/heroes.service';
 
-// Snakbar
+// Components
+import { ConfirmDeleteComponent } from '../../components/confirm-delete/confirm-delete.component';
+
+// Angular Material
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add',
@@ -48,7 +52,8 @@ export class AddComponent implements OnInit {
     private heroeService: HeroesService, 
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private _snackBar: MatSnackBar) { 
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog) { 
 
   }
 
@@ -85,16 +90,26 @@ export class AddComponent implements OnInit {
 
   // Borrar héroe.
   public delete() {
-    this.heroeService.deleteHeroe(this.heroe.id)
-    .subscribe( resp => {
-      this.router.navigate(['/heroes']);
+    const dialog = this.dialog.open(ConfirmDeleteComponent, {
+      width: '300px',
+      data: this.heroe
+    });
+
+    dialog.afterClosed()
+    .subscribe( (result) => {
+      if (result) {
+        this.heroeService.deleteHeroe(this.heroe.id)
+        .subscribe( resp => {
+          this.router.navigate(['/heroes']);
+        });
+      }      
     });
   }
 
   // Mostrar el snakbar
   openSnackBar(message: string): void {
     this._snackBar.open(message, 'Cerrar', {
-      duration: 2500
+      duration: 2500,
     });
   }
 
