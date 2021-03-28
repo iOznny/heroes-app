@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // Interfaces
@@ -6,17 +6,12 @@ import { Heroe } from '../../interfaces/heroes.interface';
 
 @Component({
   selector: 'app-confirm-delete',
-  templateUrl: './confirm-delete.component.html',
-  styles: [
-  ]
+  templateUrl: './confirm-delete.component.html'
 })
 
-export class ConfirmDeleteComponent implements OnInit {
+export class ConfirmDeleteComponent {
 
   constructor(private dialogRef: MatDialogRef<ConfirmDeleteComponent>, @Inject(MAT_DIALOG_DATA) public data: Heroe) { }
-
-  ngOnInit(): void {
-  }
 
   public delete() {
     this.dialogRef.close(true);
